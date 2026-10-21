@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dimas Saputra Jafar — Portofolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14213d;
+    --sun: #ffc93c;
+    --coral: #ff6b5b;
+    --mint: #7fd8be;
+    --paper: #fffaf0;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
+  h1, h2, h3 { font-family: "Syne", system-ui, sans-serif; line-height: 1.05; margin: 0; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+
+  /* Bar atas */
+  .bar { background: var(--ink); color: var(--paper); }
+  .bar .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: .9rem; padding-bottom: .9rem; gap: 1rem; flex-wrap: wrap; }
+  .bar b { font-family: "Syne", sans-serif; font-size: 1.15rem; }
+  .bar nav { display: flex; gap: 1.25rem; }
+  .bar nav a { text-decoration: none; }
+  .bar nav a:hover { color: var(--sun); }
+
+  /* Hero */
+  .hero { background: var(--sun); border-bottom: 3px solid var(--ink); padding: clamp(2.5rem, 8vw, 5rem) 0; }
+  .hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: center; }
+  .hero h1 { font-size: clamp(2.6rem, 8vw, 5.2rem); font-weight: 800; letter-spacing: -0.02em; }
+  .hero p { font-size: 1.2rem; max-width: 30rem; margin: 1.25rem 0 1.75rem; }
+  .btn {
+    display: inline-block; background: var(--coral); color: var(--ink); font-weight: 700;
+    padding: .8rem 1.4rem; border: 3px solid var(--ink); box-shadow: 5px 5px 0 var(--ink);
+    text-decoration: none; transition: transform .15s, box-shadow .15s;
+  }
+  .btn:hover { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--ink); }
+
+  /* Kartu identitas */
+  .id-card {
+    background: var(--paper); border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--ink);
+    padding: 1.5rem; transform: rotate(2deg);
+  }
+  .id-card h2 { font-size: 1.1rem; margin-bottom: 1rem; }
+  .id-card dl { margin: 0; }
+  .id-card dt { font-size: .85rem; color: #4a5568; }
+  .id-card dd { margin: 0 0 .9rem; font-weight: 700; font-size: 1.15rem; word-break: break-word; }
+  .id-card dd:last-child { margin-bottom: 0; }
+
+  /* Section */
+  section { padding: clamp(2.5rem, 7vw, 4.5rem) 0; }
+  section h2 { font-size: clamp(1.9rem, 5vw, 2.8rem); margin-bottom: 1.5rem; }
+  .about { max-width: 40rem; }
+  .about p { margin: 0 0 1rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: .6rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+  .tags li { background: var(--mint); border: 3px solid var(--ink); padding: .2rem .9rem; font-weight: 700; }
+
+  /* Galeri */
+  .gallery-bg { background: var(--mint); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+  figure { margin: 0; background: var(--paper); border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); }
+  figure:nth-child(odd) { transform: rotate(-1deg); }
+  figure:nth-child(even) { transform: rotate(1deg); }
+  figure svg { display: block; width: 100%; height: auto; border-bottom: 3px solid var(--ink); }
+  figcaption { padding: .6rem .9rem; font-weight: 700; }
+
+  /* Kontak */
+  .contact p { max-width: 32rem; margin: 0 0 1.5rem; }
+  .links { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.5rem; }
+  .links a { font-weight: 700; border-bottom: 3px solid var(--coral); text-decoration: none; }
+  .links a:hover { background: var(--sun); }
+
+  footer { background: var(--ink); color: var(--paper); padding: 1.5rem 0; font-size: .95rem; }
+
+  @media (max-width: 860px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .hero .wrap { grid-template-columns: 1fr; }
+    .id-card { transform: none; }
+  }
+  @media (max-width: 520px) {
+    .grid { grid-template-columns: 1fr; }
+    figure:nth-child(n) { transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <b>Dimas S. J.</b>
+    <nav aria-label="Navigasi utama">
+      <a href="#tentang">Tentang</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Dimas Saputra Jafar</h1>
+      <p>Mahasiswa yang sedang belajar membuat website dan suka mengumpulkan pemandangan yang indah.</p>
+      <a class="btn" href="#galeri">Lihat galeri</a>
+    </div>
+    <aside class="id-card" aria-label="Identitas mahasiswa">
+      <h2>Kartu identitas</h2>
+      <dl>
+        <dt>Nama</dt><dd>Dimas Saputra Jafar</dd>
+        <dt>NIM</dt><dd>2404411076</dd>
+        <dt>Kelas</dt><dd>5 Gab 2 Web</dd>
+      </dl>
+    </aside>
+  </div>
+</header>
+
+<main>
+  <section id="tentang">
+    <div class="wrap about">
+      <h2>Tentang saya</h2>
+      <p>Saya Dimas, mahasiswa kelas 5 Gab 2 Web. Di kelas ini saya belajar membuat halaman web dengan HTML dan CSS, dan situs ini adalah salah satu hasil latihannya.</p>
+      <p>Saya suka tampilan yang jelas, warna yang berani, dan halaman yang tetap enak dibuka di HP.</p>
+      <ul class="tags" aria-label="Yang sedang dipelajari">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Desain web</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="gallery-bg">
+    <section id="galeri">
+      <div class="wrap">
+        <h2>Galeri</h2>
+        <div class="grid">
+
+          <figure>
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Matahari terbenam di balik gunung">
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7e5f"/><stop offset="1" stop-color="#feb47b"/></linearGradient></defs>
+              <rect width="400" height="300" fill="url(#g1)"/>
+              <circle cx="250" cy="170" r="55" fill="#fff3b0"/>
+              <polygon points="0,300 0,200 90,120 190,230 270,160 400,260 400,300" fill="#7a3b5e"/>
+              <polygon points="0,300 0,250 120,200 240,270 330,225 400,280 400,300" fill="#3f1d3d"/>
+            </svg>
+            <figcaption>Senja di pegunungan</figcaption>
+          </figure>
+
+          <figure>
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Laut biru dengan ombak">
+              <rect width="400" height="300" fill="#bfe6ff"/>
+              <circle cx="90" cy="70" r="36" fill="#fff6b7"/>
+              <rect y="150" width="400" height="150" fill="#2a7fba"/>
+              <path d="M0 190 Q50 170 100 190 T200 190 T300 190 T400 190 V300 H0Z" fill="#1f6aa3"/>
+              <path d="M0 235 Q50 215 100 235 T200 235 T300 235 T400 235 V300 H0Z" fill="#17558a"/>
+            </svg>
+            <figcaption>Laut siang hari</figcaption>
+          </figure>
+
+          <figure>
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Gedung kota pada malam hari">
+              <rect width="400" height="300" fill="#1b2750"/>
+              <circle cx="320" cy="60" r="26" fill="#fff6c9"/>
+              <g fill="#0d1530">
+                <rect x="20" y="140" width="60" height="160"/><rect x="90" y="90" width="50" height="210"/>
+                <rect x="150" y="160" width="70" height="140"/><rect x="230" y="110" width="55" height="190"/>
+                <rect x="295" y="170" width="85" height="130"/>
+              </g>
+              <g fill="#ffd966">
+                <rect x="35" y="160" width="10" height="10"/><rect x="55" y="190" width="10" height="10"/>
+                <rect x="105" y="110" width="10" height="10"/><rect x="120" y="150" width="10" height="10"/><rect x="105" y="200" width="10" height="10"/>
+                <rect x="170" y="185" width="10" height="10"/><rect x="195" y="220" width="10" height="10"/>
+                <rect x="245" y="130" width="10" height="10"/><rect x="260" y="170" width="10" height="10"/>
+                <rect x="315" y="195" width="10" height="10"/><rect x="345" y="225" width="10" height="10"/>
+              </g>
+            </svg>
+            <figcaption>Kota di malam hari</figcaption>
+          </figure>
+
+          <figure>
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Hutan pinus hijau">
+              <rect width="400" height="300" fill="#d8f0c8"/>
+              <rect y="230" width="400" height="70" fill="#4d8b4a"/>
+              <g fill="#2e6b3a">
+                <polygon points="50,230 90,110 130,230"/><polygon points="130,230 180,80 230,230"/>
+                <polygon points="230,230 275,130 320,230"/><polygon points="300,230 345,100 390,230"/>
+              </g>
+              <g fill="#1d4d2a">
+                <polygon points="0,230 35,150 70,230"/><polygon points="180,230 215,160 250,230"/>
+              </g>
+            </svg>
+            <figcaption>Hutan pinus</figcaption>
+          </figure>
+
+          <figure>
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bukit pasir gurun">
+              <rect width="400" height="300" fill="#ffe8b5"/>
+              <circle cx="310" cy="80" r="40" fill="#ffb347"/>
+              <path d="M0 220 Q100 140 200 210 T400 190 V300 H0Z" fill="#e8b45f"/>
+              <path d="M0 260 Q120 200 240 255 T400 240 V300 H0Z" fill="#c98d3a"/>
+            </svg>
+            <figcaption>Gurun pasir</figcaption>
+          </figure>
+
+          <figure>
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Langit malam penuh bintang dan bulan sabit">
+              <defs><linearGradient id="g6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b1055"/><stop offset="1" stop-color="#7597de"/></linearGradient></defs>
+              <rect width="400" height="300" fill="url(#g6)"/>
+              <g fill="#fff">
+                <circle cx="40" cy="40" r="2"/><circle cx="110" cy="80" r="1.5"/><circle cx="170" cy="30" r="2"/>
+                <circle cx="230" cy="90" r="1.5"/><circle cx="290" cy="35" r="2"/><circle cx="360" cy="110" r="1.5"/>
+                <circle cx="70" cy="140" r="1.5"/><circle cx="200" cy="150" r="2"/>
+              </g>
+              <circle cx="320" cy="70" r="30" fill="#fff6c9"/><circle cx="332" cy="62" r="28" fill="#4a3a88"/>
+              <path d="M0 300 V230 Q100 180 200 230 T400 210 V300Z" fill="#1a1236"/>
+            </svg>
+            <figcaption>Malam penuh bintang</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="kontak" class="contact">
+    <div class="wrap">
+      <h2>Kontak</h2>
+      <p>Mau bertanya atau mengajak kerja sama untuk tugas kelompok? Kirim pesan saja.</p>
+      <a class="btn" href="mailto:halo@contoh.com">Kirim email</a>
+      <div class="links">
+        <a href="#">GitHub</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Dimas Saputra Jafar · NIM 2404411076 · Kelas 5 Gab 2 Web</div>
+</footer>
+
+</body>
+</html>
